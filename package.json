@@ -1,0 +1,25 @@
+{
+  "name": "create-errika",
+  "version": "1.0.3",
+  "bin": {
+    "create-errika": "./dist/create-errika.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/create-errika.js",
+    "release": "pnpm version patch && git push --follow-tags && pnpm publish --access public"
+  },
+  "dependencies": {
+    "@types/figlet": "^1.7.0",
+    "chalk": "4",
+    "commander": "^11.0.0",
+    "figlet": "^1.8.1",
+    "fs-extra": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.4",
+    "@types/fs-extra": "^11.0.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

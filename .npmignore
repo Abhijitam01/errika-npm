@@ -1,0 +1,27 @@
+# Ignore source files
+bin/
+
+# Ignore configuration files
+tsconfig.json
+
+# Ignore lockfiles
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Ignore unnecessary folders
+node_modules/
+.vscode/
+.turbo/
+dist/template/node_modules/
+
+# Ignore temp files
+.DS_Store
+Thumbs.db
+
+# Ignore git files
+.git/
+.gitignore
+
+# Other
+README.md (optional, only if you want a custom one published separately)
