@@ -1,26 +1,19 @@
-# Turborepo starter
+# Errika Monorepo
 
-This Turborepo starter is maintained by the Turborepo core team.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
+This is an [Errika](https://www.npmjs.com/package/create-errika) project bootstrapped with Turborepo.
 
 ## What's inside?
 
-This Turborepo includes the following packages/apps:
+This Turborepo includes the following packages and apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- **web** or **mobile** - Your frontend application (Next.js, React, or React Native)
+- **http-backend** - HTTP server for REST APIs
+- **ws-backend** - WebSocket server for real-time communication
+- **@repo/ui** - A shared React component library
+- **@repo/eslint-config** - Shared ESLint configurations
+- **@repo/typescript-config** - Shared `tsconfig.json` files
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -30,37 +23,60 @@ This Turborepo has some additional tools already setup for you:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- [Turborepo](https://turbo.build/repo) for efficient monorepo management
 
-### Build
+## Getting Started
 
-To build all apps and packages, run the following command:
+Install dependencies:
 
+```bash
+pnpm install
 ```
-cd my-turborepo
-pnpm build
-```
 
-### Develop
+## Development
 
 To develop all apps and packages, run the following command:
 
-```
-cd my-turborepo
+```bash
 pnpm dev
 ```
 
-### Remote Caching
+This will start:
+- Frontend app on `http://localhost:3000`
+- HTTP backend (check the app for port configuration)
+- WebSocket backend (check the app for port configuration)
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+## Build
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+To build all apps and packages:
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
+```bash
+pnpm build
 ```
-cd my-turborepo
+
+## Lint
+
+To lint all apps and packages:
+
+```bash
+pnpm lint
+```
+
+## Type Check
+
+To run TypeScript type checking:
+
+```bash
+pnpm check-types
+```
+
+## Remote Caching
+
+Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+
+By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+
+```bash
 npx turbo login
 ```
 
@@ -68,7 +84,7 @@ This will authenticate the Turborepo CLI with your [Vercel account](https://verc
 
 Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
 
-```
+```bash
 npx turbo link
 ```
 
@@ -76,9 +92,10 @@ npx turbo link
 
 Learn more about the power of Turborepo:
 
-- [Tasks](https://turborepo.com/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turborepo.com/docs/core-concepts/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
+- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
+- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
+- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
+- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
+- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+
