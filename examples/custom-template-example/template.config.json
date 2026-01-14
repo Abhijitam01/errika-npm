@@ -1,0 +1,30 @@
+{
+  "name": "simple-node-app",
+  "description": "Simple Node.js application template",
+  "author": "Errika Team",
+  "version": "1.0.0",
+  "supportedPackageManagers": ["npm", "yarn", "pnpm"],
+  "customPrompts": [
+    {
+      "name": "authorName",
+      "type": "text",
+      "message": "Author name:",
+      "default": "Your Name"
+    },
+    {
+      "name": "includeTests",
+      "type": "confirm",
+      "message": "Include testing setup?",
+      "default": true
+    }
+  ],
+  "customScripts": [
+    {
+      "name": "setup",
+      "description": "Install dependencies and setup project",
+      "command": "npm install",
+      "when": "after"
+    }
+  ]
+}
+

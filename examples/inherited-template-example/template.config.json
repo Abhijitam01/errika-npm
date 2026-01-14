@@ -1,0 +1,26 @@
+{
+  "name": "nextjs-portfolio",
+  "description": "Next.js portfolio template with custom styling",
+  "author": "Errika Team",
+  "version": "1.0.0",
+  "extends": "nextjs",
+  "customPrompts": [
+    {
+      "name": "portfolioName",
+      "type": "text",
+      "message": "Your name for the portfolio:",
+      "default": "John Doe"
+    },
+    {
+      "name": "theme",
+      "type": "select",
+      "message": "Choose a color theme:",
+      "choices": ["Blue", "Purple", "Green", "Orange"],
+      "default": "Blue"
+    }
+  ],
+  "files": {
+    "override": ["app/page.tsx", "app/globals.css"]
+  }
+}
+
