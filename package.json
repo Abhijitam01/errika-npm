@@ -1,27 +1,59 @@
 {
   "name": "create-errika",
-  "version": "1.1.0",
+  "version": "2.0.0",
+  "description": "A powerful CLI to create modern projects with multiple templates",
   "bin": {
-    "create-errika": "./dist/create-errika.js"
+    "create-errika": "./dist/index.js"
   },
+  "files": [
+    "dist",
+    "src/templates"
+  ],
   "scripts": {
     "build": "tsc",
-    "start": "node dist/create-errika.js",
+    "start": "node dist/index.js",
+    "dev": "tsc && node dist/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:unit": "vitest run --config vitest.config.unit.ts",
+    "test:integration": "vitest run --config vitest.config.integration.ts",
+    "validate": "tsc && node dist/scripts/validate-templates.js",
+    "prepublishOnly": "npm run build && npm run validate",
     "release": "pnpm version patch && git push --follow-tags && pnpm publish --access public"
   },
+  "keywords": [
+    "cli",
+    "template",
+    "generator",
+    "turborepo",
+    "nextjs",
+    "react",
+    "express",
+    "discord-bot",
+    "chrome-extension",
+    "typescript"
+  ],
   "dependencies": {
     "@types/figlet": "^1.7.0",
+    "@types/handlebars": "^4.1.0",
+    "@types/ora": "^3.2.0",
     "@types/prompts": "^2.4.9",
     "chalk": "4",
     "commander": "^11.0.0",
     "figlet": "^1.8.1",
     "fs-extra": "^11.0.0",
+    "cli-progress": "^3.12.0",
+    "handlebars": "4.7.8",
+    "ora": "5.4.1",
     "prompts": "^2.4.2"
   },
   "devDependencies": {
     "@types/chalk": "^2.2.4",
     "@types/fs-extra": "^11.0.0",
     "@types/node": "^20.0.0",
-    "typescript": "^5.0.0"
+    "@vitest/coverage-v8": "^1.2.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.2.0"
   }
 }

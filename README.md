@@ -1,126 +1,63 @@
-# ✨ create-errika
+# Errika
 
-> A CLI tool to instantly scaffold a Turborepo-based monorepo with multiple frontend options and package managers. Skip the setup — start building.
+A powerful CLI tool for scaffolding modern web projects with best practices built-in.
 
----
+## 📚 Documentation
 
-## 🚀 What is this?
+All project documentation has been moved to the [`docs`](/docs) folder:
 
-`create-errika` is an interactive CLI that creates a ready-to-use monorepo setup powered by [Turborepo](https://turbo.build). Choose your preferred package manager (pnpm or bun) and frontend framework (Next.js, React, or React Native).
+- **[Main Documentation](./docs/README.md)** - Complete project overview and usage guide
+- **[Developer Guide](./docs/DEVELOPER_GUIDE.md)** - Contributing and development setup
+- **[Testing Guide](./docs/TESTING_GUIDE.md)** - Running and writing tests
+- **[Changelog](./docs/CHANGELOG.md)** - Version history and updates
+- **[Security Enhancements](./docs/SECURITY_ENHANCEMENTS.md)** - Security features and best practices
+- **[Test Coverage](./docs/TEST_COVERAGE.md)** - Test coverage information
+- **[Implementation Summary](./docs/IMPLEMENTATION_SUMMARY.md)** - Technical implementation details
+- **[Privacy Policy](./PRIVACY.md)** - Analytics and privacy information
 
----
-
-## 📦 Features
-
-- 🎯 **Interactive Setup** - Guided prompts for project configuration
-- 📱 **Multiple Frontend Options**:
-  - Next.js (SSR React Framework)
-  - React (Vite SPA)
-  - React Native (Mobile)
-- 📦 **Package Manager Choice** - Use pnpm or bun
-- 🏗️ **Pre-configured Monorepo**:
-  - HTTP Backend
-  - WebSocket Backend
-  - Shared UI components
-  - TypeScript & ESLint configs
-- ⚡ Automatic dependency installation
-- 💡 Clean DX-focused starter — minimal, fast, extensible
-
----
-
-## 📥 Usage
-
-Run the interactive CLI:
+## Quick Start
 
 ```bash
-npx create-errika@latest
+npx create-errika my-app
 ```
 
-You'll be prompted to:
-1. **Enter project name** - Name your project (or use "." for current directory)
-2. **Choose package manager** - Select pnpm (recommended) or bun
-3. **Select frontend type** - Pick Next.js, React (Vite), or React Native
+## 🔍 Template Validation
 
----
-
-## 📁 What's Inside?
-
-After scaffolding, your project will have:
-
-### Apps
-- **web** or **mobile** - Your chosen frontend application
-- **http-backend** - Express/Node.js HTTP server
-- **ws-backend** - WebSocket server
-
-### Packages
-- **@repo/ui** - Shared React component library
-- **@repo/eslint-config** - Shared ESLint configurations
-- **@repo/typescript-config** - Shared TypeScript configurations
-
----
-
-## 🚀 Getting Started
-
-After creation, navigate to your project and start developing:
+Errika includes a comprehensive template validation system to ensure quality and security:
 
 ```bash
-cd my-app
+# Validate a specific template
+npx create-errika validate nextjs
 
-# Start all apps in development mode
-pnpm dev
-
-# Or with bun
-bun dev
+# Validate all templates
+npx create-errika validate --all
 ```
 
----
+See the [Validation Guide](./docs/VALIDATION.md) for details.
 
-## 📚 Available Scripts
+## 📊 Usage Statistics
 
-In the project root:
+Errika includes optional anonymous usage analytics to help improve the tool. You'll be asked for consent on first use.
 
-- `pnpm dev` - Start all apps in development mode
-- `pnpm build` - Build all apps and packages
-- `pnpm lint` - Lint all apps and packages
-- `pnpm clean` - Clean all build outputs
+**View your stats:**
+```bash
+npx create-errika stats
+```
 
----
+**Manage analytics:**
+```bash
+# Check status
+npx create-errika analytics status
 
-## 🛠️ Technology Stack
+# Enable/disable
+npx create-errika analytics enable
+npx create-errika analytics disable
 
-- **Monorepo**: Turborepo
-- **Package Manager**: pnpm or bun
-- **Language**: TypeScript
-- **Frontend Options**:
-  - Next.js 15 (React 19)
-  - Vite + React 19
-  - React Native 0.76
-- **Backend**: Node.js
-- **Linting**: ESLint
-- **Styling**: CSS (customizable)
+# Remove all data
+npx create-errika analytics reset
+```
 
----
+**Privacy First:** We only track template usage and success rates. Never project names, code, or personal data. See our [Privacy Policy](./PRIVACY.md) for details.
 
-## 📖 Learn More
+For detailed documentation, please visit the [docs folder](./docs).
 
-- [Turborepo Documentation](https://turbo.build/repo/docs)
-- [Next.js Documentation](https://nextjs.org/docs)
-- [React Documentation](https://react.dev)
-- [React Native Documentation](https://reactnative.dev)
-- [Vite Documentation](https://vitejs.dev)
-
----
-
-## 📝 License
-
-MIT
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to open issues or submit pull requests.
-
----
-
-**Happy coding! 🎉**
