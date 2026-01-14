@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database (optional, for Prisma)
+  postgres:
+    image: postgres:16-alpine
+    container_name: discord-bot-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: discord
+      POSTGRES_PASSWORD: discord_password
+      POSTGRES_DB: discord_bot
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - bot-network
+
+  # Bot service (optional, for containerized deployment)
+  # Uncomment to run the bot in Docker
+  # bot:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: discord-bot
+  #   restart: unless-stopped
+  #   env_file:
+  #     - .env
+  #   depends_on:
+  #     - postgres
+  #   networks:
+  #     - bot-network
+
+volumes:
+  postgres_data:
+
+networks:
+  bot-network:
+    driver: bridge
+

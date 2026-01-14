@@ -1,0 +1,120 @@
+// Prisma schema file for Discord Bot
+// Learn more: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // Change to "mysql" or "sqlite" as needed
+  url      = env("DATABASE_URL")
+}
+
+// User model - stores Discord user data
+model User {
+  id        String   @id // Discord user ID
+  username  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // User settings and preferences
+  settings  UserSettings?
+
+  // Relations
+  guilds    UserGuild[]
+  warnings  Warning[]
+
+  @@map("users")
+}
+
+// Guild (Server) model
+model Guild {
+  id        String   @id // Discord guild ID
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Guild settings
+  settings  GuildSettings?
+
+  // Relations
+  users     UserGuild[]
+  warnings  Warning[]
+
+  @@map("guilds")
+}
+
+// User-Guild relationship (tracks user data per guild)
+model UserGuild {
+  userId  String
+  guildId String
+  
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  guild   Guild  @relation(fields: [guildId], references: [id], onDelete: Cascade)
+
+  // Per-guild user data
+  nickname    String?
+  joinedAt    DateTime @default(now())
+  messageCount Int     @default(0)
+  lastActive  DateTime @default(now())
+
+  @@id([userId, guildId])
+  @@map("user_guilds")
+}
+
+// User settings model
+model UserSettings {
+  id     String @id @default(cuid())
+  userId String @unique
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Settings
+  dmNotifications Boolean @default(true)
+  language        String  @default("en")
+
+  @@map("user_settings")
+}
+
+// Guild settings model
+model GuildSettings {
+  id      String @id @default(cuid())
+  guildId String @unique
+
+  guild   Guild  @relation(fields: [guildId], references: [id], onDelete: Cascade)
+
+  // General settings
+  prefix           String  @default("!")
+  welcomeChannelId String?
+  logChannelId     String?
+  
+  // Moderation settings
+  autoModEnabled   Boolean @default(false)
+  antiSpamEnabled  Boolean @default(false)
+  
+  // Welcome messages
+  welcomeEnabled   Boolean @default(false)
+  welcomeMessage   String?
+
+  @@map("guild_settings")
+}
+
+// Warning/Moderation system
+model Warning {
+  id        String   @id @default(cuid())
+  userId    String
+  guildId   String
+  
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  guild     Guild    @relation(fields: [guildId], references: [id], onDelete: Cascade)
+
+  // Warning details
+  reason       String
+  moderatorId  String
+  createdAt    DateTime @default(now())
+  active       Boolean  @default(true)
+
+  @@map("warnings")
+  @@index([userId, guildId])
+}
+

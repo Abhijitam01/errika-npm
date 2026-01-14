@@ -1,0 +1,84 @@
+.ext-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.ext-button:focus {
+  outline: 2px solid #4285f4;
+  outline-offset: 2px;
+}
+
+.ext-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Variants */
+.ext-button--primary {
+  background-color: #4285f4;
+  color: white;
+}
+
+.ext-button--primary:hover:not(:disabled) {
+  background-color: #357ae8;
+}
+
+.ext-button--primary:active:not(:disabled) {
+  background-color: #2a66c9;
+}
+
+.ext-button--secondary {
+  background-color: #f1f3f4;
+  color: #202124;
+}
+
+.ext-button--secondary:hover:not(:disabled) {
+  background-color: #e8eaed;
+}
+
+.ext-button--secondary:active:not(:disabled) {
+  background-color: #dadce0;
+}
+
+.ext-button--danger {
+  background-color: #ea4335;
+  color: white;
+}
+
+.ext-button--danger:hover:not(:disabled) {
+  background-color: #d33426;
+}
+
+.ext-button--danger:active:not(:disabled) {
+  background-color: #b31412;
+}
+
+/* Sizes */
+.ext-button--small {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.ext-button--medium {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.ext-button--large {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+/* Full width */
+.ext-button--full-width {
+  width: 100%;
+}
+
