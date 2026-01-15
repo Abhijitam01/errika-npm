@@ -301,3 +301,5 @@ export default function TemplateDetailPage({ params }: { params: { id: string } 
   )
 }
 
+
+
