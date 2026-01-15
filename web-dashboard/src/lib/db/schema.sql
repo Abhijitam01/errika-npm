@@ -73,3 +73,5 @@ LEFT JOIN template_stats ts ON t.id = ts.template_id
 LEFT JOIN template_reviews tr ON t.id = tr.template_id
 GROUP BY t.id, t.name, t.category, t.downloads, t.stars;
 
+
+
