@@ -1,27 +1,34 @@
-# Ignore source files
+# Source files
+src/
 bin/
+template/
+scripts/
 
-# Ignore configuration files
+# Config files
 tsconfig.json
+vitest.config*.ts
+.github/
 
-# Ignore lockfiles
+# Lockfiles
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
 
-# Ignore unnecessary folders
+# Development
 node_modules/
 .vscode/
 .turbo/
-dist/template/node_modules/
+web-dashboard/
+docs/
+examples/
 
-# Ignore temp files
+# OS files
 .DS_Store
 Thumbs.db
 
-# Ignore git files
+# Git
 .git/
 .gitignore
 
-# Other
-README.md (optional, only if you want a custom one published separately)
+# Compiled tests (should not be in dist but just in case)
+dist/__tests__/

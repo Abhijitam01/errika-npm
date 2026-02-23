@@ -42,7 +42,9 @@ export abstract class BaseGenerator {
   constructor(options: GeneratorOptions, metadata: TemplateMetadata) {
     this.options = options;
     this.metadata = metadata;
-    this.templateDir = path.join(__dirname, '../templates', metadata.id);
+    // When compiled, __dirname is dist/generators/, so ../templates resolves to dist/templates/
+    // Templates are copied into dist/templates/ during the build step
+    this.templateDir = path.join(__dirname, '..', 'templates', metadata.id);
   }
 
   /**

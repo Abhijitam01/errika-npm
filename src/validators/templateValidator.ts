@@ -27,7 +27,9 @@ export class TemplateValidator {
 
   constructor(templateName: string) {
     this.templateName = templateName;
-    this.templateDir = path.join(__dirname, '../../src/templates', templateName);
+    // When compiled, __dirname is dist/validators/, so ../../src/templates works in dev
+    // but ../templates resolves to dist/templates/ which is where templates live after build
+    this.templateDir = path.join(__dirname, '..', 'templates', templateName);
   }
 
   /**
