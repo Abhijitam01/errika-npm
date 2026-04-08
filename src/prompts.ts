@@ -62,14 +62,14 @@ export async function runPrompts(): Promise<PromptAnswers> {
   // Combine built-in and custom templates
   const allTemplateChoices = [
     ...templates.map(t => ({
-      title: `${t.name} - ${t.description}`,
+      title: t.name,
       value: t.id,
-      description: 'Built-in template'
+      description: t.description
     })),
     ...Array.from(customTemplates.entries()).map(([id, config]) => ({
-      title: `${config.name} - ${config.description}`,
+      title: config.name,
       value: id,
-      description: config.extends ? `Custom (extends ${config.extends})` : 'Custom template'
+      description: config.description
     }))
   ];
 

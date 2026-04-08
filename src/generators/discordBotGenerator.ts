@@ -19,7 +19,7 @@ export class DiscordBotGenerator extends BaseGenerator {
     const metadata: TemplateMetadata = {
       id: 'discord-bot',
       name: 'Discord Bot',
-      description: 'Discord bot with discord.js v14, slash commands, and event handling',
+      description: 'discord.js v14, slash commands',
       supportedPackageManagers: ['npm', 'yarn', 'pnpm', 'bun']
     };
 
@@ -214,7 +214,7 @@ templateRegistry.register({
   metadata: {
     id: 'discord-bot',
     name: 'Discord Bot',
-    description: 'Discord bot with discord.js v14, slash commands, and event handling',
+    description: 'discord.js v14, slash commands',
     supportedPackageManagers: ['npm', 'yarn', 'pnpm', 'bun']
   },
   GeneratorClass: DiscordBotGenerator as any

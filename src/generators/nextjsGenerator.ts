@@ -16,8 +16,8 @@ export class NextjsGenerator extends BaseGenerator {
   constructor(options: GeneratorOptions) {
     const metadata: TemplateMetadata = {
       id: 'nextjs',
-      name: 'Next.js Full-Stack',
-      description: 'Next.js 14 with App Router, Tailwind CSS, Prisma, and TypeScript',
+      name: 'Next.js',
+      description: 'App Router, Tailwind CSS, TypeScript',
       supportedPackageManagers: ['npm', 'yarn', 'pnpm', 'bun']
     };
 
@@ -221,8 +221,8 @@ export class NextjsGenerator extends BaseGenerator {
 templateRegistry.register({
   metadata: {
     id: 'nextjs',
-    name: 'Next.js Full-Stack',
-    description: 'Next.js 15 with App Router, Tailwind CSS, and TypeScript',
+    name: 'Next.js',
+    description: 'App Router, Tailwind CSS, TypeScript',
     supportedPackageManagers: ['npm', 'yarn', 'pnpm', 'bun']
   },
   GeneratorClass: NextjsGenerator as any

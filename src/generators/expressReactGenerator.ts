@@ -17,8 +17,8 @@ export class ExpressReactGenerator extends BaseGenerator {
   constructor(options: GeneratorOptions) {
     const metadata: TemplateMetadata = {
       id: 'express-react',
-      name: 'Express + React Full-Stack',
-      description: 'Monorepo with Express.js, React, TypeScript, and Prisma',
+      name: 'Express + React',
+      description: 'Full-stack with Express, React, Prisma',
       supportedPackageManagers: ['npm', 'yarn', 'pnpm']
     };
 
@@ -279,7 +279,7 @@ templateRegistry.register({
   metadata: {
     id: 'express-react',
     name: 'Express + React',
-    description: 'Full-stack monorepo with Express.js backend and React frontend',
+    description: 'Full-stack with Express, React, Prisma',
     supportedPackageManagers: ['pnpm', 'npm', 'yarn']
   },
   GeneratorClass: ExpressReactGenerator as any

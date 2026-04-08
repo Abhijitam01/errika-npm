@@ -54,7 +54,7 @@ describe('ExpressReactGenerator', () => {
       expect(metadata.name).toBe('Express + React');
       expect(metadata.description).toContain('Express');
       expect(metadata.description).toContain('React');
-      expect(metadata.description).toContain('monorepo');
+      expect(metadata.description).toContain('Prisma');
     });
 
     it('should support pnpm, npm, and yarn', () => {
@@ -110,8 +110,7 @@ describe('ExpressReactGenerator', () => {
 
       expect(description.toLowerCase()).toContain('express');
       expect(description.toLowerCase()).toContain('react');
-      expect(description.toLowerCase()).toContain('backend');
-      expect(description.toLowerCase()).toContain('frontend');
+      expect(description.toLowerCase()).toContain('prisma');
     });
   });
 

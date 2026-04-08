@@ -51,9 +51,9 @@ describe('NextjsGenerator', () => {
       const metadata = generator.getMetadata();
 
       expect(metadata.id).toBe('nextjs');
-      expect(metadata.name).toBe('Next.js Full-Stack');
-      expect(metadata.description).toContain('Next.js 15');
+      expect(metadata.name).toBe('Next.js');
       expect(metadata.description).toContain('App Router');
+      expect(metadata.description).toContain('TypeScript');
     });
 
     it('should support all package managers', () => {
@@ -95,7 +95,6 @@ describe('NextjsGenerator', () => {
       const generator = new NextjsGenerator(options);
       const description = generator.getMetadata().description;
 
-      expect(description.toLowerCase()).toContain('next');
       expect(description.toLowerCase()).toContain('tailwind');
       expect(description.toLowerCase()).toContain('typescript');
     });

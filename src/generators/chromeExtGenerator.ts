@@ -18,7 +18,7 @@ export class ChromeExtGenerator extends BaseGenerator {
     const metadata: TemplateMetadata = {
       id: 'chrome-extension',
       name: 'Chrome Extension',
-      description: 'Chrome extension with Manifest V3, React, and TypeScript',
+      description: 'Manifest V3, React, TypeScript',
       supportedPackageManagers: ['npm', 'yarn', 'pnpm', 'bun']
     };
 
@@ -130,7 +130,7 @@ templateRegistry.register({
   metadata: {
     id: 'chrome-extension',
     name: 'Chrome Extension',
-    description: 'Chrome extension with Manifest V3, React, and TypeScript',
+    description: 'Manifest V3, React, TypeScript',
     supportedPackageManagers: ['npm', 'yarn', 'pnpm', 'bun']
   },
   GeneratorClass: ChromeExtGenerator as any

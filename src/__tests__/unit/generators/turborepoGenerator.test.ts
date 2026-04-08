@@ -51,9 +51,9 @@ describe('TurborepoGenerator', () => {
       const metadata = generator.getMetadata();
 
       expect(metadata.id).toBe('turborepo');
-      expect(metadata.name).toBe('Turborepo Monorepo');
-      expect(metadata.description).toContain('Turborepo');
-      expect(metadata.description).toContain('monorepo');
+      expect(metadata.name).toBe('Turborepo');
+      expect(metadata.description).toContain('Monorepo');
+      expect(metadata.description).toContain('backends');
     });
 
     it('should only support pnpm and bun', () => {
@@ -136,10 +136,8 @@ describe('TurborepoGenerator', () => {
       const generator = new TurborepoGenerator(options);
       const description = generator.getMetadata().description;
 
-      expect(description.toLowerCase()).toContain('turborepo');
       expect(description.toLowerCase()).toContain('monorepo');
       expect(description.toLowerCase()).toContain('backend');
-      expect(description.toLowerCase()).toContain('frontend');
     });
   });
 

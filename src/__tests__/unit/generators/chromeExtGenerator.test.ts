@@ -52,8 +52,8 @@ describe('ChromeExtGenerator', () => {
 
       expect(metadata.id).toBe('chrome-extension');
       expect(metadata.name).toBe('Chrome Extension');
-      expect(metadata.description).toContain('Chrome extension');
       expect(metadata.description).toContain('Manifest V3');
+      expect(metadata.description).toContain('React');
     });
 
     it('should support all package managers', () => {
@@ -95,7 +95,6 @@ describe('ChromeExtGenerator', () => {
       const generator = new ChromeExtGenerator(options);
       const description = generator.getMetadata().description;
 
-      expect(description.toLowerCase()).toContain('chrome');
       expect(description.toLowerCase()).toContain('manifest');
       expect(description.toLowerCase()).toContain('react');
       expect(description.toLowerCase()).toContain('typescript');

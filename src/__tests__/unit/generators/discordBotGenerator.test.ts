@@ -97,7 +97,6 @@ describe('DiscordBotGenerator', () => {
 
       expect(description.toLowerCase()).toContain('discord');
       expect(description.toLowerCase()).toContain('slash commands');
-      expect(description.toLowerCase()).toContain('event');
     });
   });
 

@@ -16,13 +16,16 @@ export class TurborepoGenerator extends BaseGenerator {
   constructor(options: TurborepoOptions) {
     const metadata: TemplateMetadata = {
       id: 'turborepo',
-      name: 'Turborepo Monorepo',
-      description: 'Full-stack monorepo with Turborepo, multiple backends, and your choice of frontend',
+      name: 'Turborepo',
+      description: 'Monorepo with multiple backends',
       supportedPackageManagers: ['pnpm', 'bun']
     };
 
     super(options, metadata);
-    this.turborepoOptions = options;
+    this.turborepoOptions = {
+      ...options,
+      frontendType: options.frontendType ?? (options.templateVariables?.frontendType as FrontendType) ?? 'nextjs'
+    };
   }
 
   /**
@@ -141,8 +144,8 @@ export class TurborepoGenerator extends BaseGenerator {
 templateRegistry.register({
   metadata: {
     id: 'turborepo',
-    name: 'Turborepo Monorepo',
-    description: 'Full-stack monorepo with Turborepo, multiple backends, and your choice of frontend',
+    name: 'Turborepo',
+    description: 'Monorepo with multiple backends',
     supportedPackageManagers: ['pnpm', 'bun']
   },
   GeneratorClass: TurborepoGenerator as any
